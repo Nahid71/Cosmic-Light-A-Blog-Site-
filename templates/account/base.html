@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div style="background: url({% static 'img/login.jpg' %}); background-size: cover;color:white; ">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="raw">
+    <div class="container col-sm-4">
+    </div>
+    <div class="container col-sm-8">
+
+
+      {% block conten %}
+
+      {% endblock conten %}
+    </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+{% endblock content %}
