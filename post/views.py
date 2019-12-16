@@ -4,6 +4,8 @@ from .models import Post, Author, PostView, Category
 from marketing.models import Signup
 from django.db.models import Count, Q
 from .forms import CommentForm, PostForm
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 def get_author(user):
@@ -160,3 +162,17 @@ def post_delete(request, id):
     post = get_object_or_404(Post, id=id)
     post.delete()
     return redirect(reverse("post-list"))
+
+
+def handler404(request, *args, **argv):
+    response = render_to_response('404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
