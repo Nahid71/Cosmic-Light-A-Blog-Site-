@@ -10,8 +10,8 @@ from post.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('blog/', blog, name='post-list'),
+    path('', blog, name='post-list'),
+    # path('blog/', blog, name='post-list'),
     path('search/', search, name='post-search'),
     path('create/', post_create, name='post-create'),
     path('post/<id>', post, name='post-details'),
